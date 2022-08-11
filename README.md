@@ -57,7 +57,7 @@ matplotlib, sklearn, scikit-image, opencv-python
 
 4.You can run this project by using the command line, just like this.
  
-  ```python main.py --action test --arch UNet --epoch 51 --batch_size 4```
+  ```python main.py --action test --arch Attention_UNet --epoch 51 --batch_size 4```
   
   in ```--arch```, you can use UNet, UNet_AGC, unet++, unet++_AGC, Attention_UNet, Attention_UNet_AGC
                          r2unet, r2unet_AGC, fcn8s, fcn8s_AGC, fcn32s, fcn32s_AGC
