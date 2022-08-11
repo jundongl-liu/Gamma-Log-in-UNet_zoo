@@ -22,6 +22,7 @@ class AGCnet(nn.Module):
         p = torch.mean(x)
         p = p/3
         """
+        device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         x0 = self.global_avgpool(x)
         x0 = self.conv1(x0)
         x1 = self.conv2(x0)
@@ -29,13 +30,13 @@ class AGCnet(nn.Module):
         #规范输出到0-2之间
         x1min = torch.min(x1).cpu().detach().numpy()
         x1max = torch.max(x1).cpu().detach().numpy()
-        x1 = (torch.from_numpy((x1.cpu().detach().numpy() - x1min)/(x1max - x1min) * 2)).to(device='cuda:0')
+        x1 = (torch.from_numpy((x1.cpu().detach().numpy() - x1min)/(x1max - x1min) * 2)).to(device)
         #x1 = torch.sigmoid(x1)
         #x1 = torch.add(x1,0.5)  #规范输出范围0.5-1.5
 
         x2 = torch.min(x).cpu().detach().numpy()
         x3 = torch.max(x).cpu().detach().numpy()
-        x4 = (torch.from_numpy((x.cpu().detach().numpy()-x2)/(x3-x2))).to(device='cuda:0')    #归一化
+        x4 = (torch.from_numpy((x.cpu().detach().numpy()-x2)/(x3-x2))).to(device)    #归一化
 
         #tensor分块
         hd1 = torch.split(x4,x4.size()[2] // 2,2)[0]
@@ -93,7 +94,7 @@ class AGCnet(nn.Module):
         #tensor拼接
         g1 = torch.cat((g11,g12),3)
         g2 = torch.cat((g21,g22),3)
-        device =torch.device("cuda")
+        #device =torch.device("cuda")
         x44 = torch.cat((g1,g2),2).to(device)#.to(device='cuda:2')
 
         #x4 = torch.from_numpy(exposure.adjust_gamma(x4.cpu().detach().numpy(), 1.5))
