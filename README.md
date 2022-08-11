@@ -55,7 +55,9 @@ matplotlib, sklearn, scikit-image, opencv-python
   line352             #i_u_img.save(dir +'\\'+mask_path[0].split('\\')[-1])  #win
   ```
 
-4.you can download the weight files what you need  from this website.
+4.you need to download the weight files what you need  from this website.
+  
+  And you need to put the weight files to the path " ./saved_model/oil_spill_detection/"
     
   Baidu netdisk:  https://pan.baidu.com/s/15N5OctWqZQ7Js7Sg37f9zA
     
