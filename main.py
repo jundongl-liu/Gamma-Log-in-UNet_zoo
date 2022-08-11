@@ -367,7 +367,7 @@ def test(val_dataloaders,save_predict=True):
         dice_standard = (dice_up / num) ** 0.5
         """
         #print('Miou=%f,aver_hd=%f,dv=%f,Miou_standard=%f, aver_dice_standard=%f' % (miou_total/num,hd_total/num,dice_total/num,iou_standard,dice_standard))
-        logging.info('Miou=%f,aver_hd=%f,dv=%f,Miou_standard=%f, aver_dice_standard=%f' % (miou_total/num,hd_total/num,dice_total/num,iou_standard,dice_standard))
+        #logging.info('Miou=%f,aver_hd=%f,dv=%f,Miou_standard=%f, aver_dice_standard=%f' % (miou_total/num,hd_total/num,dice_total/num,iou_standard,dice_standard))
         #print('M_dice=%f' % (dice_total / num))
 
 if __name__ =="__main__":
