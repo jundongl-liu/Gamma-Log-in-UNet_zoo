@@ -342,18 +342,22 @@ def test(val_dataloaders,save_predict=True):
                 else:
                     #print(dir +'/'+ mask_path[0].split('/')[-1])
                     #plt.savefig(dir +'/'+mask_path[0].split('/')[-1])
-                    predict =Image.fromarray(predict).convert('L')
-                    predict.save(dir +'/'+mask_path[0].split('/')[-1])
                     
-                    #i_u_img = Image.fromarray(i_u_img).convert('L')
-                    #i_u_img.save(dir +'/'+mask_path[0].split('/')[-1])
+                    predict =Image.fromarray(predict).convert('L')         #predict
+                    #predict.save(dir +'/'+mask_path[0].split('/')[-1])    #linux
+                    predict.save(dir +'\\'+mask_path[0].split('\\')[-1])   #win
 
+                    #i_u_img = Image.fromarray(i_u_img).convert('L')       #difference
+                    #i_u_img.save(dir +'/'+mask_path[0].split('/')[-1])    #linux
+                    #i_u_img.save(dir +'\\'+mask_path[0].split('\\')[-1])  #win
+                    
             #plt.pause(0.01)
             print('iou={},dice={}'.format(iou,dice))
             if i < num:i+=1   #处理验证集下一张图
         #print('M_accuracy=%f,m_precision=%f,m_recall=%f,m_F1=%f' % (accuracy_list/num, precision_list/num, recall_list/num, F1_list/num ))
         #logging.info('M_accuracy=%f,m_precision=%f,m_recall=%f,m_F1=%f' % (accuracy_list/num, precision_list/num, recall_list/num, F1_list/num ))
         #plt.show()
+        """
         for l in range(len(iou_list)):
             iou_single = (iou_list[l] - miou_total / num) ** 2
             iou_up += iou_single
@@ -361,8 +365,8 @@ def test(val_dataloaders,save_predict=True):
             dice_up += dice_single
         iou_standard = (iou_up / num) ** 0.5
         dice_standard = (dice_up / num) ** 0.5
-
-        print('Miou=%f,aver_hd=%f,dv=%f,Miou_standard=%f, aver_dice_standard=%f' % (miou_total/num,hd_total/num,dice_total/num,iou_standard,dice_standard))
+        """
+        #print('Miou=%f,aver_hd=%f,dv=%f,Miou_standard=%f, aver_dice_standard=%f' % (miou_total/num,hd_total/num,dice_total/num,iou_standard,dice_standard))
         logging.info('Miou=%f,aver_hd=%f,dv=%f,Miou_standard=%f, aver_dice_standard=%f' % (miou_total/num,hd_total/num,dice_total/num,iou_standard,dice_standard))
         #print('M_dice=%f' % (dice_total / num))
 
