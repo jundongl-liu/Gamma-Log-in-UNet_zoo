@@ -105,9 +105,9 @@ def get_iou(mask_name,predict):
     inter_img = np.zeros((height,weight))
     for row in range(height):
         for col in range(weight):
-            if image_mask[row, col] > 0 and image_test[row, col] > 0 :  #predict[row, col] > 0 :
+            if image_mask[row, col] > 0 and predict[row, col] > 0 :  # :
                 inter_img [row, col] = 1
-            if image_mask[row, col] > 0 or image_test[row, col] > 0 :#predict[row, col] > 0 :
+            if image_mask[row, col] > 0 or predict[row, col] > 0 :# :
                 union_img [row, col] = 1
     i_u_img = union_img - inter_img
     for row in range(height):
