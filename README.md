@@ -51,7 +51,7 @@ matplotlib, sklearn, scikit-image, opencv-python
  
   ```python main.py --action test --arch UNet --epoch 51 --batch_size 4```
   
-  in --arch, you can use UNet, UNet_AGC, unet++, unet++_AGC, Attention_UNet, Attention_UNet_AGC
+  in ```--arch```, you can use UNet, UNet_AGC, unet++, unet++_AGC, Attention_UNet, Attention_UNet_AGC
                          r2unet, r2unet_AGC, fcn8s, fcn8s_AGC, fcn32s, fcn32s_AGC
   UNet_AGC means the UNet with Gamma_Log Net.
   
@@ -60,7 +60,8 @@ matplotlib, sklearn, scikit-image, opencv-python
  
  you will get the results in "saved_predict" folder.
  The predict results and the difference images are in the same place.
-  
+ 
+ The specific values of iou and difference are displayed at the interface.
   
   
   
