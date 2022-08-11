@@ -55,7 +55,14 @@ matplotlib, sklearn, scikit-image, opencv-python
   line352             #i_u_img.save(dir +'\\'+mask_path[0].split('\\')[-1])  #win
   ```
 
-4.You can run this project by using the command line, just like this.
+4. you can download the weight files what you need  from this website.
+    
+    baidu netdisk:  https://pan.baidu.com/s/15N5OctWqZQ7Js7Sg37f9zA
+    
+    extraction code:  kdy4
+
+
+5.You can run this project by using the command line, just like this.
  
   ```python main.py --action test --arch Attention_UNet --epoch 51 --batch_size 4```
   
