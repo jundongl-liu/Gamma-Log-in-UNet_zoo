@@ -102,10 +102,10 @@ def getModel(args):
 
 
     if args.arch == 'fcn8s_AGC':
-        assert args.dataset !='esophagus',
+        assert args.dataset !='esophagus'
         model = get_fcn8s_AGC(1).to(device)
     if args.arch == 'fcn8s':
-        assert args.dataset !='esophagus',
+        assert args.dataset !='esophagus'
         model = get_fcn8s(1).to(device)
 
     if args.arch == 'cenet_AGC':
