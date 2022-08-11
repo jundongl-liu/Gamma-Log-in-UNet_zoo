@@ -72,7 +72,7 @@ def get_iou(mask_name,predict):
                     image_mask[row, col] = 1
                 if image_mask[row, col] == 0 or image_mask[row, col] == 1:
                     o += 1
-
+    """
     for row in range(height_mask):
         for col in range(weight_mask):
             if image_test[row, col] < 1:  
@@ -81,7 +81,7 @@ def get_iou(mask_name,predict):
                 image_test[row, col] = 1
             if image_test[row, col] == 0 or image_test[row, col] == 1:
                 o += 1
-
+    """
     predict = predict.astype(np.int16)
 
     
